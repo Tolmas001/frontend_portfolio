@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import heroBg from '../assets/hero_bg.png';
+import avatar from '../assets/avatar.png';
 import { useLang } from '../LanguageContext';
 
 const PARTICLES = Array.from({ length: 18 }, (_, i) => ({
@@ -119,6 +120,35 @@ const Hero = () => {
 
       {/* Main Content */}
       <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
+        
+        {/* Avatar */}
+        <div className="animate-bounce-in" style={{
+          width: '130px', height: '130px',
+          margin: '0 auto 1.5rem',
+          borderRadius: '50%',
+          padding: '4px',
+          background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
+          boxShadow: '0 10px 30px rgba(108,58,237,0.2)',
+          position: 'relative',
+          animation: 'heroFloat 6s ease-in-out infinite',
+        }}>
+          <img src={avatar} alt="Tolmas" style={{
+            width: '100%', height: '100%',
+            objectFit: 'cover',
+            borderRadius: '50%',
+            border: '4px solid #fff',
+          }} />
+          {/* Status dot */}
+          <span style={{
+            position: 'absolute',
+            bottom: '8px', right: '8px',
+            width: '20px', height: '20px',
+            background: '#22c55e',
+            border: '3px solid #fff',
+            borderRadius: '50%',
+          }} />
+        </div>
+
         {/* Greeting tag */}
         <div className="animate-bounce-in" style={{
           display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
