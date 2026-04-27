@@ -22,9 +22,8 @@ const Navbar = () => {
       justifyContent: 'space-between',
       alignItems: 'center',
       padding: '1rem 2rem',
-      background: scrolled ? 'rgba(255,255,255,0.95)' : 'transparent',
-      backdropFilter: scrolled ? 'blur(10px)' : 'none',
-      borderBottom: scrolled ? '1px solid var(--border-color)' : '1px solid transparent',
+      background: scrolled ? 'rgba(255,255,255,0.98)' : 'transparent',
+      borderBottom: scrolled ? '1px solid #e5e7eb' : '1px solid transparent',
       transition: 'all 0.3s ease',
     }}>
       <div style={{
