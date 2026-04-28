@@ -26,15 +26,45 @@ const Skills = () => {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-          gap: '1.5rem',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+          gap: '2rem',
         }}>
           {skills.map((skill, i) => (
-            <div key={i} className="skill-card reveal">
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                {skill.category}
+            <div key={i} className="skill-card glass reveal" style={{
+              padding: '2rem',
+              borderRadius: 'var(--radius-xl)',
+              transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+              position: 'relative',
+              overflow: 'hidden',
+            }}>
+              {/* Colorful Corner Glow */}
+              <div style={{
+                position: 'absolute', top: '-20px', right: '-20px',
+                width: '80px', height: '80px',
+                background: i % 2 === 0 ? 'var(--primary-gradient)' : 'var(--accent-gradient)',
+                filter: 'blur(40px)',
+                opacity: 0.3,
+                zIndex: 0,
+              }} />
+
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <div style={{ 
+                  fontSize: '0.7rem', 
+                  color: 'var(--primary-color)', 
+                  marginBottom: '0.75rem', 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.15em',
+                  fontWeight: '800'
+                }}>
+                  {skill.category}
+                </div>
+                <h3 style={{ 
+                  fontSize: '1.4rem', 
+                  color: 'var(--text-primary)',
+                  fontWeight: '700',
+                  letterSpacing: '-0.02em'
+                }}>{skill.name}</h3>
               </div>
-              <h3 style={{ fontSize: '1.1rem', color: 'var(--text-primary)' }}>{skill.name}</h3>
             </div>
           ))}
         </div>

@@ -52,6 +52,11 @@ export const translations = {
     },
     footer: {
       rights: '2026 Tolmas. Barcha huquqlar himoyalangan.',
+    },
+    testimonials: {
+      title: 'Mijozlar',
+      title_highlight: 'Fikrlari',
+      subtitle: 'Men bilan ishlagan insonlarning samimiy e\'tiroflari.',
     }
   },
   ru: {
@@ -107,6 +112,11 @@ export const translations = {
     },
     footer: {
       rights: '2026 Толмас. Все права защищены.',
+    },
+    testimonials: {
+      title: 'Отзывы',
+      title_highlight: 'Клиентов',
+      subtitle: 'Искренние отзывы людей, с которыми я работал.',
     }
   },
   en: {
@@ -162,6 +172,11 @@ export const translations = {
     },
     footer: {
       rights: '2026 Tolmas. All rights reserved.',
+    },
+    testimonials: {
+      title: 'Client',
+      title_highlight: 'Testimonials',
+      subtitle: 'Sincere feedback from people I have worked with.',
     }
   }
 };

@@ -5,47 +5,62 @@ const Footer = () => {
   const { t } = useLang();
 
   return (
-    <footer style={{
-      padding: '3.5rem 0',
-      borderTop: '1px solid rgba(108,58,237,0.1)',
-      background: '#fff',
+    <footer className="glass" style={{
+      padding: '4rem 0',
+      borderTop: '1px solid var(--border-color)',
+      background: 'var(--bg-color)',
     }}>
       <div className="container" style={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
         flexWrap: 'wrap',
-        gap: '1.5rem',
+        gap: '2rem',
       }}>
         <div>
           <div style={{
-            fontSize: '1.2rem', fontWeight: '800',
-            fontFamily: 'var(--font-heading)', marginBottom: '0.4rem',
-            letterSpacing: '-0.03em',
+            fontSize: '1.4rem', fontWeight: '900',
+            fontFamily: 'var(--font-heading)', marginBottom: '0.6rem',
+            letterSpacing: '-0.04em',
+            color: 'var(--text-primary)'
           }}>
-            T<span className="text-gradient">.</span>PORTFOLIO
+            T<span style={{ color: 'var(--primary-color)' }}>.</span>PORTFOLIO
           </div>
-          <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>© {t.footer.rights}</p>
+          <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontWeight: '500' }}>© {t.footer.rights}</p>
         </div>
-        <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-          {['GitHub', 'LinkedIn', 'Twitter', 'Dribbble'].map((name, i) => (
-            <a key={i} href="#" style={{
-              fontSize: '0.85rem',
-              color: 'var(--text-secondary)',
-              fontWeight: '500',
-              padding: '0.4rem 0.8rem',
-              borderRadius: '0.4rem',
-              transition: 'all 0.3s ease',
+        
+        <div style={{ display: 'flex', gap: '1.25rem' }}>
+          {[
+            { name: 'GitHub', icon: '🐙', url: 'https://github.com' },
+            { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com' },
+            { name: 'Telegram', icon: '✈️', url: 'https://t.me' },
+            { name: 'Twitter', icon: '🐦', url: 'https://twitter.com' },
+          ].map((social, i) => (
+            <a key={i} href={social.url} target="_blank" rel="noopener noreferrer" className="glass" style={{
+              width: '45px',
+              height: '45px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '1.2rem',
+              transition: 'var(--transition)',
+              border: '1px solid var(--border-color)',
             }}
               onMouseEnter={e => {
-                e.currentTarget.style.color = 'var(--primary-color)';
-                e.currentTarget.style.background = 'var(--primary-lighter)';
+                e.currentTarget.style.transform = 'translateY(-5px) scale(1.1)';
+                e.currentTarget.style.background = 'var(--primary-gradient)';
+                e.currentTarget.style.color = 'white';
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.color = 'var(--text-secondary)';
+                e.currentTarget.style.transform = 'none';
                 e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.color = 'inherit';
               }}
-            >{name}</a>
+              title={social.name}
+            >
+              {social.icon}
+            </a>
           ))}
         </div>
       </div>
