@@ -81,6 +81,10 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-primary);
@@ -88,6 +92,10 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #334155;
 }
 
 ::-webkit-scrollbar { width: 8px; }

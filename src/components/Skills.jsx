@@ -2,12 +2,12 @@ import React from 'react';
 import { useLang } from '../LanguageContext';
 
 const skills = [
-  { name: 'React / Next.js', category: 'Frontend' },
-  { name: 'TypeScript', category: 'Language' },
-  { name: 'Tailwind CSS', category: 'Styling' },
-  { name: 'Node.js', category: 'Backend' },
-  { name: 'PostgreSQL', category: 'Database' },
-  { name: 'Figma', category: 'Design' },
+  { name: 'React / Next.js', category: 'Frontend', level: 95 },
+  { name: 'TypeScript', category: 'Language', level: 90 },
+  { name: 'Tailwind CSS', category: 'Styling', level: 98 },
+  { name: 'Node.js', category: 'Backend', level: 85 },
+  { name: 'PostgreSQL', category: 'Database', level: 80 },
+  { name: 'Figma', category: 'Design', level: 88 },
 ];
 
 const Skills = () => {
@@ -48,22 +48,42 @@ const Skills = () => {
               }} />
 
               <div style={{ position: 'relative', zIndex: 1 }}>
-                <div style={{ 
-                  fontSize: '0.7rem', 
-                  color: 'var(--primary-color)', 
-                  marginBottom: '0.75rem', 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.15em',
-                  fontWeight: '800'
-                }}>
-                  {skill.category}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                  <div style={{ 
+                    fontSize: '0.7rem', 
+                    color: 'var(--primary-color)', 
+                    textTransform: 'uppercase', 
+                    letterSpacing: '0.15em',
+                    fontWeight: '800'
+                  }}>
+                    {skill.category}
+                  </div>
+                  <div style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--text-muted)' }}>{skill.level}%</div>
                 </div>
                 <h3 style={{ 
                   fontSize: '1.4rem', 
                   color: 'var(--text-primary)',
                   fontWeight: '700',
-                  letterSpacing: '-0.02em'
+                  letterSpacing: '-0.02em',
+                  marginBottom: '1.5rem'
                 }}>{skill.name}</h3>
+
+                {/* Progress Bar */}
+                <div style={{
+                  width: '100%',
+                  height: '6px',
+                  background: 'var(--bg-tertiary)',
+                  borderRadius: '100px',
+                  overflow: 'hidden',
+                }}>
+                  <div style={{
+                    width: `${skill.level}%`,
+                    height: '100%',
+                    background: i % 2 === 0 ? 'var(--primary-gradient)' : 'var(--accent-gradient)',
+                    borderRadius: '100px',
+                    transition: 'width 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.5s',
+                  }} />
+                </div>
               </div>
             </div>
           ))}

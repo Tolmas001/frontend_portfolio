@@ -10,8 +10,8 @@ import Footer from './components/Footer';
 import { LanguageProvider } from './LanguageContext';
 import { ThemeProvider } from './ThemeContext';
 import { useScrollRevealAll } from './hooks/useScrollReveal';
-
 import CustomCursor from './components/CustomCursor';
+import ScrollTools from './components/ScrollTools';
 
 function App() {
   useScrollRevealAll();
@@ -19,6 +19,7 @@ function App() {
   return (
     <ThemeProvider>
       <CustomCursor />
+      <ScrollTools />
       <LanguageProvider>
         <Navbar />
         <main>
