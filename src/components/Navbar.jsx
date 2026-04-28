@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from 'react';
+import { useLang } from '../LanguageContext';
 import { useTheme } from '../ThemeContext';
 
 const Navbar = () => {
